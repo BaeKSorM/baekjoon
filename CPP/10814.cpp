@@ -3,22 +3,23 @@
 #include <algorithm>
 using namespace std;
 
-bool comp(pair<int, string> i, pair<int, string> j){
+bool comp(pair<int, string> i, pair<int, string> j)
+{
 	return i.first < j.first;
 }
 
-int main(){
+int main()
+{
 	int n;
 	cin >> n;
 	vector<pair<int, string>> v(n);
-	for(int i=0;i<n;++i){
+	for (int i = 0; i < n; ++i)
+	{
 		cin >> v[i].first >> v[i].second;
 	}
-	stable_sort(v.begin(), v.end(), comp);
-	/*sort(): µ¿ÀÏÇÑ °ªÀÇ ¿ä¼Òµé¿¡ ´ëÇØ, µÎ ¿ä¼Ò°¡ ±âÁ¸¿¡ °¡Áö°í ÀÖ´ø ¼ø¼­¸¦ º¸ÀåÇÏÁö ¾Ê´Â´Ù
-	  stable_sort(): µ¿ÀÏÇÑ °ªÀÇ ¿ä¼Òµé¿¡ ´ëÇØ, µÎ ¿ä¼Ò°¡ ±âÁ¸¿¡ °¡Áö°í ÀÖ´ø ¼ø¼­¸¦ º¸ÀåÇÑ´Ù
-	*/
-	for(int i=0;i<n;++i){
+	stable_sort(v.begin(), v.end(), comp); // comp or less<ìë£Œí˜•>()
+	for (int i = 0; i < n; ++i)
+	{
 		cout << v[i].first << " " << v[i].second << "\n";
 	}
 }
